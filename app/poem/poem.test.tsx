@@ -4,5 +4,7 @@ import '@testing-library/jest-dom/vitest';
 import Poem from './page';
 
 describe('Poem page', () => {
-	it('renders a poem', () => {});
+	it('renders a poem', () => {
+    const title = 
+  });
 });

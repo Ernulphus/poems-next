@@ -1,11 +1,7 @@
-import { createClient } from '@/utils/supabase/server';
-import { cookies } from 'next/headers';
-
+import { createClient } from '@/utils/supabase/client';
 export default async function Home() {
-	const cookieStore = await cookies();
-	const supabase = createClient(cookieStore);
+	const supabase = createClient();
 	const { data: poems } = await supabase.from('poems').select();
-	console.log(poems);
 	return (
 		<ul>
 			{poems?.map((poem) => (

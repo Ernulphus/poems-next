@@ -1,0 +1,7 @@
+.poem_list {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	margin-left: 40%;
+	margin-top: 5rem;
+}

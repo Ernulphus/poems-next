@@ -24,12 +24,8 @@ vi.mock('@/utils/supabase/poems', () => ({
 describe('Poem page', () => {
 	it('renders a poem', async () => {
 		getPoemMock.mockResolvedValue(testPoemData);
-
-		// Pass params as a Promise
-		const paramsPromise = Promise.resolve({ id: '1' });
-
-		// Await the page function and render its JSX
-		const jsx = await Poem({ params: paramsPromise });
+		const params = Promise.resolve({ id: '1' });
+		const jsx = await Poem({ params: params });
 		render(jsx);
 
 		expect(await screen.findByText(/fleas/i)).toBeInTheDocument();

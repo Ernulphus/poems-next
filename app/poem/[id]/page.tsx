@@ -38,6 +38,8 @@ export default async function PoemPage({
 	const { name, birth_year, death_year, nationality } = author;
 	return (
 		<article className={styles.poem}>
+			<Link href="/">Back to Home</Link>
+			<br />
 			<h1>{poem.title}</h1>
 			<AuthorLine
 				name={name}

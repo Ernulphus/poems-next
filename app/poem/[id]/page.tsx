@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { getAuthor } from '@/utils/supabase/authors';
 import { getPoem } from '@/utils/supabase/poems';
+import styles from './poem.module.css';
 
 function AuthorLine(props: AuthorProps) {
 	const { name, birth_year, death_year, nationality } = props;
@@ -35,7 +37,7 @@ export default async function PoemPage({
 	console.log(author);
 	const { name, birth_year, death_year, nationality } = author;
 	return (
-		<article>
+		<article className={styles.poem}>
 			<h1>{poem.title}</h1>
 			<AuthorLine
 				name={name}
@@ -44,6 +46,8 @@ export default async function PoemPage({
 				nationality={nationality}
 			/>
 			<pre>{poem.text}</pre>
+			<br />
+			<Link href="/">Back to Home</Link>
 		</article>
 	);
 }

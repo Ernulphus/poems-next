@@ -28,3 +28,13 @@ body {
 h1 {
 	font-size: x-large;
 }
+
+a {
+	text-decoration: underline;
+	transition: opacity ease-in 0.2s;
+	opacity: 0.8;
+	margin-top: 0.2rem;
+}
+a:hover {
+	opacity: 1;
+}

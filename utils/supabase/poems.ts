@@ -8,6 +8,11 @@ type Poem = {
 	tags: string;
 };
 
+export async function getAllPoems() {
+	const supabase = createClient();
+	return supabase.from('poems').select();
+}
+
 export async function getPoem(id: number) {
 	const supabase = createClient();
 	return supabase.from('poems').select().eq('id', id).single();

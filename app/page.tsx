@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { createClient } from '@/utils/supabase/client';
+import { getAllPoems } from '@/utils/supabase/poems';
 import styles from './home.module.css';
 
 export default async function Home() {
-	const supabase = createClient();
-	const { data: poems } = await supabase.from('poems').select();
+	const { data: poems } = await getAllPoems();
 	return (
 		<div>
 			<ul className={styles.poem_list}>
